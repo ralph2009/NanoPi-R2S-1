@@ -22,7 +22,7 @@ if ! [ "$need_warn" == "" ]; then
     exit 1
 fi
 
-workingdir=/root/r2sflasher/
+workingdir=/root/r4sflasher/
 
 rm -rf $workingdir
 mkdir -p $workingdir
