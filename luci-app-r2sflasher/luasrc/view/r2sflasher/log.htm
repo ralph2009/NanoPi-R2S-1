@@ -5,7 +5,7 @@ local dsp = require "luci.dispatcher"
 <script type="text/javascript">
 	//<![CDATA[
 	var rebooting = false;
-	XHR.poll(1, '<%=dsp.build_url("admin/system/r2sflasher/get_log")%>', null,
+	XHR.poll(1, '<%=dsp.build_url("admin/system/r4sflasher/get_log")%>', null,
 		function(x, data) {
 			if(x) {
 				if (!rebooting) {
