@@ -11,7 +11,7 @@ fu.template = "r2sflasher/rom"
 um = section:option(DummyValue, "", nil)
 
 local dir, fd
-dir = "/tmp/r2sflasher/"
+dir = "/tmp/r4sflasher/"
 nixio.fs.mkdir(dir)
 http.setfilehandler(
 	function(meta, chunk, eof)
@@ -36,8 +36,8 @@ http.setfilehandler(
             if keep_config == nil then
                 cmd = cmd .. " nobackup"
             end
-			luci.sys.call(cmd .. " &> /tmp/r2sflasher.log &")
-			http.redirect(dsp.build_url("/admin/system/r2sflasher/log"))
+			luci.sys.call(cmd .. " &> /tmp/r4sflasher.log &")
+			http.redirect(dsp.build_url("/admin/system/r4sflasher/log"))
 		end
 	end
 )
@@ -50,7 +50,7 @@ if luci.http.formvalue("flash") then
 end
 
 if luci.sys.call("pidof rom_flash > /dev/null") == 0 then
-    http.redirect(dsp.build_url("/admin/system/r2sflasher/log"))
+    http.redirect(dsp.build_url("/admin/system/r4sflasher/log"))
     return
 else
     return romform
