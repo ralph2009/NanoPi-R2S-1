@@ -1,6 +1,6 @@
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=luci-app-r2sflasher
+PKG_NAME:=luci-app-r4sflasher
 PKG_VERSION:=1.0
 PKG_RELEASE:=4
 PKG_DATE:=20200416
@@ -10,7 +10,7 @@ include $(INCLUDE_DIR)/package.mk
 define Package/$(PKG_NAME)
   CATEGORY:=LuCI
   SUBMENU:=3. Applications
-  TITLE:=LuCI Application to Flash NanoPi R2S ROM
+  TITLE:=LuCI Application to Flash NanoPi R4S ROM
   PKGARCH:=all
   DEPENDS:=+bash +gzip +tar +unzip +pv +losetup +zstd +luci-base +luci-lib-nixio
 endef
@@ -32,7 +32,7 @@ define Package/$(PKG_NAME)/install
 	cp -pR ./luasrc/* $(1)/usr/lib/lua/luci/
 	
 	$(INSTALL_DIR) $(1)/usr/lib/lua/luci/i18n
-	po2lmo ./po/zh-cn/r2sflasher.po $(1)/usr/lib/lua/luci/i18n/r2sflasher.zh-cn.lmo
+	po2lmo ./po/zh-cn/r4sflasher.po $(1)/usr/lib/lua/luci/i18n/r4sflasher.zh-cn.lmo
 endef
 
 define Package/$(PKG_NAME)/postinst
